@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center/cover;
+    filter: blur(0px);
+    z-index: -1;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.354);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.036);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #33293c;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #402333;
+    border-color: #0f080c;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    font-size: 14px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: rgba(34, 34, 34, 0.8);
+    color: white;
+}
+
+button {
+    background: rgba(32, 8, 44, 0.507);
+    color: rgb(236, 235, 235);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: rgba(77, 46, 92, 0.9);
+}
+
+.result {
+    margin-top: 20px;
+}
+
+#passwordOutput {
+    font-size: 1.2rem;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+#copyMessage {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: none;
+}
+
+.strength-indicator {
+    margin-top: 20px;
+    position: relative;
+}
+
+#indicatorBar {
+    height: 10px;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#indicatorBar div {
+    height: 100%;
+    width: 0%;
+    background-color: red;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#strengthText {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
